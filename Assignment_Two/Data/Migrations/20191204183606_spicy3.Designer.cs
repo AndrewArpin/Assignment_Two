@@ -4,14 +4,16 @@ using Assignment_Two.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Assignment_Two.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191204183606_spicy3")]
+    partial class spicy3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -104,7 +106,7 @@ namespace Assignment_Two.Data.Migrations
 
                     b.Property<string>("OwnerName");
 
-                    b.Property<int>("TeamID");
+                    b.Property<int?>("TeamID");
 
                     b.HasKey("OwnerID");
 
@@ -118,6 +120,8 @@ namespace Assignment_Two.Data.Migrations
                     b.Property<int>("TeamID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("OwnerID");
 
                     b.Property<string>("StadiumName");
 
@@ -220,8 +224,7 @@ namespace Assignment_Two.Data.Migrations
                 {
                     b.HasOne("Assignment_Two.Models.Team")
                         .WithMany("Owners")
-                        .HasForeignKey("TeamID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TeamID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
