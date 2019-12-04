@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment_Two", "Assignment_Two\Assignment_Two.csproj", "{4096E7F3-4048-4CCC-B560-AC54A44E6171}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{64297166-1041-42CC-84D5-BEF0EB7966C9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment2Tester", "Assignment2Tester\Assignment2Tester.csproj", "{63B31547-AB1C-484D-BA70-FDDC609E3020}"
 EndProject
 Global
