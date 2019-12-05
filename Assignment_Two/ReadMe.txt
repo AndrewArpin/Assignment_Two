@@ -1,0 +1,1 @@
+﻿This is a NHL team and owner info page.
