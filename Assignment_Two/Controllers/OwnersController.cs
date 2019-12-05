@@ -46,6 +46,8 @@ namespace Assignment_Two.Controllers
         // GET: Owners/Create
         public IActionResult Create()
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
+
             return View();
         }
 
@@ -68,6 +70,8 @@ namespace Assignment_Two.Controllers
         // GET: Owners/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
+
             if (id == null)
             {
                 return NotFound();
@@ -119,6 +123,8 @@ namespace Assignment_Two.Controllers
         // GET: Owners/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (!User.Identity.IsAuthenticated) return Redirect("/Identity/Account/Login");
+
             if (id == null)
             {
                 return NotFound();
